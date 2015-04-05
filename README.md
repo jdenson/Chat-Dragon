@@ -1,48 +1,31 @@
 # HP's Dragon
-A Slack Chat Bot
+##A Slack Chat Bot
 
+# Description
 
 This is a bot for use with the Slack Chat webclient. It uses Slack's Web API format and is written in Python 3.
 
-More info on Slack bots can be found here: https://api.slack.com/bot-users
+More info on Slack bots can be found [here.](https://api.slack.com/bot-users)
 
-To generate your CLIENT_ID and CLIENT_SECRET, you will need to register your bot here: https://api.slack.com/applications/new
+I call this "HP's Dragon", but it can easily be renamed within the file dragon.py (which can also be renamed).
 
-You will also need to generate your API token either with a new integration here: https://my.slack.com/services/new/bot or with your own Web API authentication here: https://api.slack.com/web
+The bot's commands can be found [here](https://github.com/jdenson/HP-s-Dragon/blob/master/COMMANDS.md)
 
+# Installation
 
-COMMANDS TO THE DRAGON ARE AS FOLLOWS:
+This is a standalone program and as such it is easy to install.
 
-(Only fully implemented commands are shown for now.)
+Remember that you must be running (as) Python 3.4 or later.
 
- !flame username -- will taunt user
- 
- !praise username -- will praise user
- 
- !pic search_string -- will display a random picture after searching google for search_string
- 
- !iplay game1 game2 game3 -- will record that you are playing game1 game2 game3
- 
- !whoplays game -- will list all people who have reported that they play game
- 
- !playing name -- will list every game name is playing
- 
- !quote -- put up a random quote
- 
- !suggest game -- will choose a game from the list of all games people are playing
- 
- +amount name -- assign amount DKP to name
- 
- -amount name -- remove amount DKP from name
- 
- !joke -- offer a random joke
- 
- !roll -- return a random number between 0 and 10000
- 
- !stock ticker -- get the current quote for ticker
- 
- !coin coinname -- get the current price of crypt currency <coin>
- 
- !record username -- record the last thing username said.
- 
- !test -- make sure the bot is responding
+1. Download or clone the repository to your target directory
+2. Update the bot file ("dragon.py") with the necessary information provided to you by Slack
+	1. To generate your CLIENT_ID and CLIENT_SECRET, you will need to register your bot [here](https://api.slack.com/applications/new)
+3. Update token.txt with your API token (make sure the file only contains one line)
+	1. You will need to generate your API token either with a new integration [here](https://my.slack.com/services/new/bot), or with your own Web API authentication [here](https://api.slack.com/web)
+4. Assign the bot a username in the provided field.
+5. Make sure to include the necessary information such as Team and *your* username. The bot REQUIRES this info to function properly.
+6. (Optional) Once you have made sure that all necessary info has been added to the bot, activate a virtual environment.
+7. Install the required dependencies with `pip(3) install -r requirements.txt --allow-all-external`
+8. Run the bot!
+
+If the bot is working properly, after starting it will begin to display scrolling data output, beginning with a request/response header.
