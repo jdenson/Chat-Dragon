@@ -38,7 +38,7 @@ If the bot is working properly, after starting it will begin to display scrollin
 
 1. Follow steps 1-3 above.
 2. Run either the command prompt (cmd.exe) or Powershell as an Administrator
-3. `cd` to the directory where you downloaded the repository.
+3. `cd` to the repository folder.
 4. Run the command `pip install -r requirements.txt --allow-all-external`
 5. Run the bot, either by running it directly or from within the Python Shell.
 
