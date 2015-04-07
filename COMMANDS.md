@@ -33,3 +33,5 @@
  !record username -- record the last thing username said.
  
  !test -- make sure the bot is responding
+ 
+ !rps rock/paper/scissors -- play RPS against the bot. (It doesn't cheat.)

@@ -52,6 +52,12 @@ def importJokes(filename="jokes.txt"):
     jokes = infile.readlines()
     infile.close()
     return jokes
+	
+def importRPS(filename="rps.txt"):
+    infile = open(filename)
+    rps = infile.readlines()
+    infile.close()
+    return rps
 
 COMPLIMENTS = importCompliments()
 INSULTS = importInsults()
@@ -139,7 +145,7 @@ def onMessage(ws, message):
         RECENT_MESSAGES[getUserName(userID)] = text
         channelID = info["channel"]
         lower = text.lower()
-#        if lower.find("!time") > -1: getTime(ws, userID, channelID) #display time from timeapi
+#        if lower.find("!time") > -1: getTime(ws, userID, channelID) #display time
         if lower.find("!flame") > -1: flame(ws, userID, text, channelID) #insult user
         if lower.find("!praise") > -1: praise(ws, userID, text, channelID) #praise user
         if lower.find("!pic") > -1: getPic(ws, text, channelID) #search for and display picture matching input string
@@ -155,7 +161,7 @@ def onMessage(ws, message):
         if lower.find("!help") > -1: sendHelp(ws, userID, channelID) #display dragon commands
         if lower.find("!stock") > -1: stockCheck(ws, userID, text, channelID) #yahoo finance lookup
         if lower.find("!coin") > -1: coinPrice(ws, userID, text, channelID) #check digital currency price
-        if lower.find("!record") > -1: recordQuote(ws, userID, text, channelID)
+        if lower.find("!record") > -1: recordQuote(ws, userID, text, channelID) #record the last thing specified user said
 #        if lower.find("!urbandefine") >-1: urbanDefine(ws, text, channelID) #urban dictionary lookup
         if lower.find("!test") >-1: dragonTest(ws, text, channelID) #make sure the dragon is alive
 #        if lower.find("!deletethat") >-1: deleteThat(ws, TSLAST, CHANLAST) #tell the bot to delete its last message
@@ -374,6 +380,9 @@ def recordQuote(ws, userID, text, channelID):
 
 def dragonTest(ws, text, channelID):
     chat(ws, "I'm here!", channelID)
+	
+def playRPS(ws, text, channelID):
+    chat(ws, "%s" % (RPS[random.randrange(len(RPS))]), channelID)
 
 def onError(ws, error):
     print("ERROR:\n" + error)
