@@ -28,6 +28,7 @@ Remember that you must be running (as) Python 3.4 or later.
 3. Update token.txt with your API token (make sure the file only contains one line)
 	1. You will need to generate your API token either with a new integration [here](https://my.slack.com/services/new/bot), or with your own Web API authentication [here](https://api.slack.com/web)
 4. (Optional) Once you have made sure that all necessary info has been added to the bot, activate a virtual environment.
+<<<<<<< HEAD
 5. As root, install the required dependencies with `pip3 install -r requirements.txt --allow-all-external`
 6. Run the bot!
 
@@ -49,3 +50,9 @@ If the bot is working properly, after starting it will begin to display scrollin
 This repository contains everything necessary for the bot to be run on Heroku. Follow the normal Python deployment procedure to deploy and run the bot.
 
 I recommend using the Papertrail addon to track the output of the bot.
+=======
+5. Install the required dependencies with `pip(3) install -r requirements.txt --allow-all-external`
+6. Run the bot!
+
+If the bot is working properly, after starting it will begin to display scrolling data output, beginning with a request/response header.
+>>>>>>> origin/master
