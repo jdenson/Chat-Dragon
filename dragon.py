@@ -25,35 +25,35 @@ NOW = datetime.now()
 USERNAME = urllib.request.quote(INFO["name"]) #formats the bot username to work properly with the WEB API url input
 
 #opens and reads the file containing your API token
-infile = open("token.txt")
+infile = open("auth/token.txt")
 TOKEN = infile.read()
 infile.close()
 
-def importInsults(filename="insults.txt"):
+def importInsults(filename="flat/insults.txt"):
     infile = open(filename)
     insults = infile.readlines()
     infile.close()
     return insults
 
-def importCompliments(filename="compliments.txt"):
+def importCompliments(filename="flat/compliments.txt"):
     infile = open(filename)
     compliments = infile.readlines()
     infile.close()
     return compliments
 
-def importQuotes(filename="quotes.txt"):
+def importQuotes(filename="flat/quotes.txt"):
     infile = open(filename)
     quotes = infile.readlines()
     infile.close()
     return quotes
 
-def importJokes(filename="jokes.txt"):
+def importJokes(filename="flat/jokes.txt"):
     infile = open(filename)
     jokes = infile.readlines()
     infile.close()
     return jokes
 	
-def importRPS(filename="rps.txt"):
+def importRPS(filename="flat/rps.txt"):
     infile = open(filename)
     rps = infile.readlines()
     infile.close()
@@ -219,7 +219,7 @@ def updatePlaying(ws, userID, text, channelID):
     username = getUserName(userID)
     try: PLAYING[username] = text[7:]
     except IndexError: return
-    with open("playing.txt", 'w') as outfile:
+    with open("flat/playing.txt", 'w') as outfile:
         json.dump(PLAYING, outfile)
     chat(ws, "%s play list updated: %s" % (username, PLAYING[username]), channelID)
 
@@ -279,7 +279,7 @@ def adjustDKP(ws, userID, text, channelID):
             DKP[username] = DKP[username] - num
         else:
             DKP[username] = num
-    with open("DKP.txt", 'w') as outfile:
+    with open("flat/DKP.txt", 'w') as outfile:
         json.dump(DKP, outfile)
     chat(ws, "%s's DKP total has been adjusted. Their new total is: %d" % (username, DKP[username]), channelID)
 
@@ -368,7 +368,7 @@ def recordQuote(ws, userID, text, channelID):
         chat(ws, target + " hasn't said anything recently, sorry.", channelID)
         return
     quote = RECENT_MESSAGES[target]
-    outfile = open("quotes.txt", 'a')
+    outfile = open("flat/quotes.txt", 'a')
     outfile.write(quote + " -- " + target + '\n')
     outfile.close()
     QUOTES.append(quote + " -- " + target)
@@ -392,11 +392,11 @@ def onClose(ws):
 
 if __name__ == "__main__":
     try:
-        with open("playing.txt") as infile:
+        with open("flat/playing.txt") as infile:
             PLAYING = json.load(infile)
     except IOError: PLAYING = {}
     try:
-        with open("DKP.txt") as infile:
+        with open("flat/DKP.txt") as infile:
             DKP = json.load(infile)
     except IOError: DKP = {}
 	

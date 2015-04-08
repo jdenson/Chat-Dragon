@@ -25,7 +25,7 @@ Remember that you must be running (as) Python 3.4 or later.
 	1. To generate your CLIENT_ID and CLIENT_SECRET, you will need to register your bot [here](https://api.slack.com/applications/new)
 	2. Assign the bot a username in the provided field.
 	3. Make sure to include the necessary information such as Team and *your* username. The bot REQUIRES this info to function properly.
-3. Update token.txt with your API token (make sure the file only contains one line)
+3. Update auth/token.txt with your API token (make sure the file only contains one line)
 	1. You will need to generate your API token either with a new integration [here](https://my.slack.com/services/new/bot), or with your own Web API authentication [here](https://api.slack.com/web)
 4. Once you have made sure that all necessary info has been added to the bot, activate a virtual environment.
 5. As root, install the required dependencies with `pip3 install -r requirements.txt --allow-all-external`
