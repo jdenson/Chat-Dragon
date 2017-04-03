@@ -1,4 +1,4 @@
-# HP's Dragon
+# Chat Dragon
 ##A Slack Chat Bot
 
 # Description
@@ -7,7 +7,7 @@ This is a bot for use with the Slack Chat webclient. It uses Slack's Web API for
 
 More info on Slack bots can be found [here.](https://api.slack.com/bot-users)
 
-I call this "HP's Dragon", but it can easily be renamed within the file dragon.py (which can also be renamed).
+I call this "Chat Dragon", but it can easily be renamed within the file dragon.py (which can also be renamed).
 
 The bot's commands can be found [here](https://github.com/jdenson/HP-s-Dragon/blob/master/COMMANDS.md)
 
